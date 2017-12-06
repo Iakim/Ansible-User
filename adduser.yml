@@ -1,0 +1,17 @@
+---
+- hosts: test
+  remote_user: root
+  vars:
+    password_iakim: $6$JFwst49456B.wZu0dprpNkkMxaTacI3vYIF1iiYIljYdsE.Ris5rL80y57som/lDpf9HrdSxa86nb/7PmY8rpjhPON5Jx.0
+    password_iakim2: $6$JFwst4542GB.wZu0dprpNkkMxaTacI3vYIF1iiYIljYdsE.Ris5rL80y57som/lDpf9HrdSxa86nb/7PmY8rpjhPON5Jx.0
+    password_isaac: $6$JFwst49895B.wZu0dprpNkkMxaTacI3vYIF1iiYIljYdsE.Ris5rL80y57som/lDpf9HrdSxa86nb/7PmY8rpjhPON5Jx.0
+  
+  tasks:
+  - name: Create user Iakim
+    user: name=iakim password={{ password_iakim }} comment="Iakim Romanov" group=wheel
+
+  - name: Create user Iakim2
+    user: name=iakim2 password={{ password_iakim2 }} comment="Iakim2 Romanov2" group=wheel
+
+  - name: Create user Isaac
+    user: name=isaac password={{ password_isaac }} comment="Isaac de Moraes" group=wheel
