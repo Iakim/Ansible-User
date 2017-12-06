@@ -1,3 +1,4 @@
+---
 - hosts: test
   remote_user: root
   vars:
@@ -6,20 +7,20 @@
     user3: isaac
 
   tasks:
-  - name: Remover usuario1
+  - name: Remove user1
     user: name={{ user1 }} state=absent
 
-  - name: Deletando home
+  - name: Deleting the home
     shell: rm -rf /home/{{ user1 }}
 
-  - name: Remover usuario2
+  - name: Remove user2
     user: name={{ user2 }} state=absent
 
-  - name: Deletando home
+  - name: Deleting the home
     shell: rm -rf /home/{{ user2 }}
 
-  - name: Remover usuario3
+  - name: Remove user3
     user: name={{ user3 }} state=absent
 
-  - name: Deletando home
+  - name: Deleting the home
     shell: rm -rf /home/{{ user3 }}
